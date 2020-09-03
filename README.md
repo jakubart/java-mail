@@ -1,4 +1,4 @@
-# Java Mail - automat
+# Java Mail
 > Aplikacja pobiera dane z bazy i rozsyla je w postaci wiadomości e-mail.
 
 ## Opis aplikacji
