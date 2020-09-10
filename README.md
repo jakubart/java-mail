@@ -12,3 +12,6 @@ Program działa równolegle z dwie bazami danych. Z MySql pobiera inormacje na t
 * Maven
 * SQL
 
+## Przykładowe zdjęcia
+
+![Img](./img/email.JPG)
