@@ -12,6 +12,3 @@ Program działa równolegle z dwie bazami danych. Z MySql pobiera inormacje na t
 * Maven
 * SQL
 
-## Opis uruchomienia
-
-W pliku apli
