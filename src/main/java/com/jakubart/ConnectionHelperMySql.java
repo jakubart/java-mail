@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConnectionHelperMySql {
 
-    private static String url = "jdbc:mysql://localhost:3306/jakosc?serverTimezone = ECT";
-    private static String user = "root";
-    private static String passwd = "admin";
+    private static String url = "jdbc:mysql://your_url?serverTimezone = ECT";
+    private static String user = "your_user";
+    private static String passwd = "your_password";
     private static String dbDriver = "com.mysql.cj.jdbc.Driver";
     private static Connection conn;
 
