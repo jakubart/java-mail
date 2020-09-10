@@ -1,5 +1,10 @@
 package com.jakubart;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class Counter {
 
     private int mysqlCunter;
@@ -28,5 +33,25 @@ public class Counter {
         this.idZamXprinti = idZamXprinti;
     }
 
-    
+    public int checkMysqlCounter() {
+        int counter = 0;
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+        conn = ConnectionHelperMySql.getConnection();
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT id_zam FROM zamowienia_email");
+            if (rs.next()) {
+                counter = rs.getInt("id_zam");
+            }
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Error check counter from Mysql");
+            e.printStackTrace();
+            System.exit(-2);
+        }
+        return counter;
+    }
+
 }
