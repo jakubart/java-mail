@@ -54,4 +54,25 @@ public class Counter {
         return counter;
     }
 
+    public int chcecIdZamXprinti() {
+        int id = 0;
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+        conn = ConnectionHelperSqlServer.getConnection();
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select max(ID_ZAMOWIENIE_MASTER) as max from [XPRINTI_PRO].[dbo].[baza_zamowienia_master]");
+            if (rs.next()) {
+                id = rs.getInt("max");
+            }
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Error select max id_zamowienie_master from SQL Server");
+            e.printStackTrace();
+            System.exit(-2);
+        }
+        return id;
+    }
+
 }
