@@ -10,7 +10,8 @@ public class Counter {
     private int mysqlCunter;
     private int idZamXprinti;
 
-    public Counter(){}
+    public Counter() {
+    }
 
     public Counter(int mysqlCunter, int idZamXprinti) {
         this.mysqlCunter = mysqlCunter;
@@ -75,4 +76,20 @@ public class Counter {
         return id;
     }
 
+    public void updateCounter(int id) {
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+        conn = ConnectionHelperMySql.getConnection();
+        try {
+            stmt = conn.createStatement();
+            stmt.executeUpdate("UPDATE zamowienia_email SET id_zam =" + id);
+            System.out.println("Licznik zamówienia zaktualizowany na wartość: " + id);
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Error update counter in Mysql");
+            e.printStackTrace();
+            System.exit(-2);
+        }
+    }
 }
