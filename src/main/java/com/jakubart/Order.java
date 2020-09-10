@@ -109,10 +109,10 @@ public class Order {
                     "\t  ,o.NAZWA as 'Klient'\n" +
                     "\t  ,zm.NR_EXT as 'Numer zamowienia'\n" +
                     "\t  ,zm.OPIS as 'Opis' \n"+
-                    "  FROM [XPRINTI_PRO].[dbo].[baza_zamowienia_child] zc\n" +
-                    "inner join [XPRINTI_PRO].[dbo].[baza_zamowienia_master]  zm on zc.ID_ZAMOWIENIE_MASTER = zm.ID_ZAMOWIENIE_MASTER \n" +
-                    "inner join  [XPRINTI_PRO].[dbo].[products]  p on CC_ID_PRODUKT = p.ID_PRODUCT\n" +
-                    "inner join   [XPRINTI_PRO].[dbo].[baza_odbiorcy]  o on zm.ID_ODBIORCA = o.ID_ODBIORCA\n" +
+                    "  FROM [baza_zamowienia_child] zc\n" +
+                    "inner join [baza_zamowienia_master]  zm on zc.ID_ZAMOWIENIE_MASTER = zm.ID_ZAMOWIENIE_MASTER \n" +
+                    "inner join  [products]  p on CC_ID_PRODUKT = p.ID_PRODUCT\n" +
+                    "inner join  [baza_odbiorcy]  o on zm.ID_ODBIORCA = o.ID_ODBIORCA\n" +
                     "where o.nazwa not in ('ETYKIETY POLSKIE','MROŻENIE (DODRUK)', 'ROLMEX - GĘSI','ROLMEX DE- GĘSI','ROLMEX - BEEF HOUSE','ROLMEX-DROBGEN', 'PALETY', 'PODROBY') " +
                     "and zc.ID_ZAMOWIENIE_MASTER >'" + counterOrder + "'" +
                     "group by zc.ID_ZAMOWIENIE_MASTER,INDEKS_CDN, o.NAZWA,zm.DATA_ZAMOWIENIA,zm.DATA_REALIZACJI,zm.NR_EXT, zm.OPIS \n" +
