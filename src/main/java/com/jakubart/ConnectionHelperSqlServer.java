@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConnectionHelperSqlServer {
 
-    private static String url = "jdbc:sqlserver://192.168.219.10\\XMART;database=XPRINTI_PRO";
-    private static String user = "partia";
-    private static String passwd = "kurak6";
+    private static String url = "jdbc:sqlserver://your_url";
+    private static String user = "your_user";
+    private static String passwd = "your_password";
     private static String dbDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private static Connection conn;
 
