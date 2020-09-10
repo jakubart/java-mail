@@ -55,7 +55,7 @@ public class Counter {
         return counter;
     }
 
-    public int chcecIdZamXprinti() {
+    public int chcecIdZamSqlServer() {
         int id = 0;
         Connection conn;
         Statement stmt;
