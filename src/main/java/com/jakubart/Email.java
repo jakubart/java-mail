@@ -74,7 +74,7 @@ public class Email {
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(prop.getProperty("email.adress")));
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(prop.getProperty("email.to")));
-                message.setSubject("Nowe zamóweinia w systemie XPRINTI");
+                message.setSubject("Nowe zamóweinia w systemie");
                 message.setText(Email.writeTextMessage(Order.readOrders(idZam)));
                 Transport.send(message);
                 System.out.println("Wiadomość wysłana");
